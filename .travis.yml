@@ -11,6 +11,7 @@ cache:
 
 before_install:
   - npm install -g @lhci/cli
+  - npm install -g codacy-coverage
 
 install:
   - npm install
@@ -18,7 +19,8 @@ install:
 script:
   - ng lint
   - ng build --prod --base-href https://kamilzasada.github.io/angular-tour-of-heroes/
-  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
+  - npm run test:coverage | codacy-coverage
+#  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
 
 addons:
   chrome: stable
