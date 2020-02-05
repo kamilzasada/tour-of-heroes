@@ -6,10 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "coverage": "ng test --no-watch --code-coverage",
+    "test:coverage": "ng test --no-watch --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sonar:coverage": "npm run coverage",
+    "sonar:coverage": "npm run test:coverage",
     "sonar:lint": "ng lint --format json > .scannerreports/tsreport.json"
   },
   "private": true,
