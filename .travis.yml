@@ -32,7 +32,8 @@ script:
   #  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter format-coverage -t lcov -o coverage/angular-tour-of-heroes/lcov.info
+  - ./cc-test-reporter upload-coverage
 
 #addons:
 #  chrome: stable
