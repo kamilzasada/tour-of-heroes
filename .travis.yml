@@ -3,7 +3,7 @@ sudo: false
 
 language: node_js
 node_js:
-  - "10"
+  - '10'
 
 cache:
   directories:
@@ -11,16 +11,23 @@ cache:
 
 before_install:
   #  - npm install -g @lhci/cli
-  #  - npm install -g codacy-coverage
 
 install:
   - npm install
 
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - ng lint
   - ng build --prod --base-href https://kamilzasada.github.io/angular-tour-of-heroes/
-  #  - npm run test:coverage | codacy-coverage
+  - npm run test:coverage
   #  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 #addons:
 #  chrome: stable
