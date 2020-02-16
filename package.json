@@ -10,7 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sonar:coverage": "npm run test:coverage",
-    "sonar:lint": "ng lint --format json > .scannerreports/tsreport.json"
+    "sonar:lint": "ng lint --format json > .scannerreports/tsreport.json",
+    "ci:lint": "npm run lint",
+    "ci:build": "npm run build -- --prod",
+    "ci:coverage": "npm run test:coverage -- --no-progress --browsers=ChromeHeadlessCI"
   },
   "private": true,
   "dependencies": {
