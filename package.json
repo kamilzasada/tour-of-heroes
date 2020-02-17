@@ -10,15 +10,20 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sonar:coverage": "npm run test:coverage",
-    "sonar:lint": "ng lint --format json > .scannerreports/tsreport.json"
+    "sonar:lint": "ng lint --format json > .scannerreports/tsreport.json",
+    "ci:lint": "npm run lint",
+    "ci:build": "npm run build -- --prod",
+    "ci:coverage": "npm run test:coverage -- --no-progress --browsers=ChromeHeadlessCI"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.0",
+    "@angular/cdk": "^9.0.0",
     "@angular/common": "~9.0.0",
     "@angular/compiler": "~9.0.0",
     "@angular/core": "~9.0.0",
     "@angular/forms": "~9.0.0",
+    "@angular/material": "^9.0.0",
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",

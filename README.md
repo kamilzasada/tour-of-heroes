@@ -3,8 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 [![Build Status](https://travis-ci.com/kamilzasada/angular-tour-of-heroes.svg?branch=master)](https://travis-ci.com/kamilzasada/angular-tour-of-heroes)
-[![Coverage Status](https://coveralls.io/repos/github/kamilzasada/angular-tour-of-heroes/badge.svg?branch=master)](https://coveralls.io/github/kamilzasada/angular-tour-of-heroes?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/297a01685aba4ecb9b685aecdf5e6dc4)](https://app.codacy.com/manual/kamil.zasada/angular-tour-of-heroes?utm_source=github.com&utm_medium=referral&utm_content=kamilzasada/angular-tour-of-heroes&utm_campaign=Badge_Grade_Dashboard)
+[![Maintainability](https://api.codeclimate.com/v1/badges/808b754c21e269d9bee7/maintainability)](https://codeclimate.com/github/kamilzasada/angular-tour-of-heroes/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/808b754c21e269d9bee7/test_coverage)](https://codeclimate.com/github/kamilzasada/angular-tour-of-heroes/test_coverage)
 
 ## Development server
 

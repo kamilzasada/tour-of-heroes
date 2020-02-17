@@ -3,7 +3,12 @@ sudo: false
 
 language: node_js
 node_js:
-  - "10"
+  - '10'
+
+sources:
+  - google-chrome
+packages:
+  - google-chrome-stable
 
 cache:
   directories:
@@ -11,16 +16,23 @@ cache:
 
 before_install:
   #  - npm install -g @lhci/cli
-  #  - npm install -g codacy-coverage
 
 install:
   - npm install
 
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
 script:
-  - ng lint
-  - ng build --prod --base-href https://kamilzasada.github.io/angular-tour-of-heroes/
-  #  - npm run test:coverage | codacy-coverage
+  - npm run ci:lint
+  - npm run ci:build -- --base-href https://kamilzasada.github.io/angular-tour-of-heroes/
+  - npm run ci:coverage
   #  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
+
+after_script:
+  - ./cc-test-reporter format-coverage coverage/angular-tour-of-heroes/lcov.info --input-type lcov
+  - ./cc-test-reporter upload-coverage
 
 #addons:
 #  chrome: stable
