@@ -31,7 +31,7 @@ script:
   #  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
 
 after_script:
-  - ./cc-test-reporter format-coverage -t lcov -o coverage/angular-tour-of-heroes
+  - ./cc-test-reporter format-coverage coverage/angular-tour-of-heroes/lcov.info --input-type lcov
   - ./cc-test-reporter upload-coverage
 
 #addons:
