@@ -106,9 +106,7 @@
               "apps/tour-of-heroes/tsconfig.app.json",
               "apps/tour-of-heroes/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -133,13 +131,14 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/tour-of-heroes-e2e/tsconfig.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "tour-of-heroes"
+  "defaultProject": "tour-of-heroes",
+  "cli": {
+    "defaultCollection": "@nrwl/nest"
+  }
 }
