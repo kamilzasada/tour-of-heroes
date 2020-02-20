@@ -13,6 +13,9 @@
     },
     "tour-of-heroes-e2e": {
       "tags": []
+    },
+    "tour-of-heroes-api": {
+      "tags": []
     }
   }
 }

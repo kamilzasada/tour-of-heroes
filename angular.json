@@ -67,7 +67,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "tour-of-heroes:build"
+            "browserTarget": "tour-of-heroes:build",
+            "proxyConfig": "apps/tour-of-heroes/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -132,6 +133,61 @@
           "options": {
             "tsConfig": "apps/tour-of-heroes-e2e/tsconfig.json",
             "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "tour-of-heroes-api": {
+      "root": "apps/tour-of-heroes-api",
+      "sourceRoot": "apps/tour-of-heroes-api/src",
+      "projectType": "application",
+      "prefix": "tour-of-heroes-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/tour-of-heroes-api",
+            "main": "apps/tour-of-heroes-api/src/main.ts",
+            "tsConfig": "apps/tour-of-heroes-api/tsconfig.app.json",
+            "assets": ["apps/tour-of-heroes-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/tour-of-heroes-api/src/environments/environment.ts",
+                  "with": "apps/tour-of-heroes-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "tour-of-heroes-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/tour-of-heroes-api/tsconfig.app.json",
+              "apps/tour-of-heroes-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/tour-of-heroes-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/tour-of-heroes-api/jest.config.js",
+            "tsConfig": "apps/tour-of-heroes-api/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }
