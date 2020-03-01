@@ -1,10 +1,11 @@
-<h3>Top Heroes</h3>
-<div>
-  <a *ngFor="let hero of heroes" routerLink="/detail/{{ hero.id }}">
-    <div>
-      <h4>{{ hero.name }}</h4>
-    </div>
-  </a>
-</div>
+<h2 class="mat-title">Top Heroes</h2>
+
+<mat-grid-list cols="4" rowHeight="96" gutterSize="16">
+  <mat-grid-tile *ngFor="let hero of heroes">
+    <mat-card routerLink="/heroes/{{ hero.id }}">
+      {{ hero.name }}
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
 
 <app-hero-search></app-hero-search>

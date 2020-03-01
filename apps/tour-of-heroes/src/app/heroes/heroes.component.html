@@ -22,7 +22,7 @@
 
 <ul>
   <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{ hero.id }}"> {{ hero.id }} {{ hero.name }} </a>
+    <a routerLink="/heroes/{{ hero.id }}"> {{ hero.id }} {{ hero.name }} </a>
     <button title="delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
