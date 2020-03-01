@@ -1,0 +1,21 @@
+{
+  "npmScope": "tour-of-heroes",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "tour-of-heroes": {
+      "tags": []
+    },
+    "tour-of-heroes-e2e": {
+      "tags": []
+    },
+    "tour-of-heroes-api": {
+      "tags": []
+    }
+  }
+}

@@ -26,12 +26,12 @@ before_script:
 
 script:
   - npm run ci:lint
-  - npm run ci:build -- --base-href https://kamilzasada.github.io/angular-tour-of-heroes/
+  - npm run ci:build -- --base-href https://kamilzasada.github.io/tour-of-heroes/
   - npm run ci:coverage
   #  - lhci autorun --rc-overrides.upload.target=temporary-public-storage
 
 after_script:
-  - ./cc-test-reporter format-coverage coverage/angular-tour-of-heroes/lcov.info --input-type lcov
+  - ./cc-test-reporter format-coverage coverage/tour-of-heroes/lcov.info --input-type lcov
   - ./cc-test-reporter upload-coverage
 
 #addons:
@@ -41,6 +41,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/angular-tour-of-heroes
+  local_dir: dist/tour-of-heroes
   on:
     branch: master

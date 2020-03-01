@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "numberOfRuns": 3,
-      "staticDistDir": "dist/angular-tour-of-heroes"
+      "staticDistDir": "dist/tour-of-heroes"
     },
     "assert": {
       "preset": "lighthouse:recommended",
